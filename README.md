@@ -3,6 +3,25 @@
 > My first-ever hands-on Power BI project — learning, building,
 > experimenting, and documenting the journey.
 
+## 🌱 Why This Project Matters to Me
+
+This is my first-ever Power BI project.
+
+What makes this project special to me isn't that the dashboard is
+perfect — it is that it represents the first time I went from
+learning a new tool to actually creating a report with it.
+
+I started with a YouTube tutorial, learned by following along,
+experimented with the different Power BI features, and eventually
+created my first complete report.
+
+This project is a starting point for my Power BI learning journey.
+
+I also want to use GitHub to document the learning process itself,
+rather than only uploading finished projects.
+
+I believe learning progress can also be documented.
+
 ## 📌 About This Project
 
 This is my first-ever project using Microsoft Power BI.
@@ -19,6 +38,52 @@ exploring the tool for the first time to creating my first report.
 
 ![My First Power BI Dashboard](screenshots/dashboard.png)
 
+## 📈 Dashboard Overview
+
+This dashboard provides a visual overview of sales performance across
+different time periods, products, product categories, and countries.
+
+The report includes:
+
+- Total number of orders
+- Total number of customers
+- Total sales
+- Sales trends over time
+- Sales by product
+- Sales by product category
+- Country-level filtering
+- Product-category filtering
+- Date-range filtering
+
+## 🔍 What the Dashboard Shows
+
+The report uses several visualizations to explore sales performance.
+
+### Sales Trend
+
+A line chart shows how sales change over time, making it easier to
+identify periods of higher and lower sales.
+
+### Sales by Product
+
+A horizontal bar chart compares sales across individual products
+and highlights the highest-performing products.
+
+### Sales by Product Category
+
+A donut chart provides a breakdown of total sales across product
+categories.
+
+### Interactive Filters
+
+The report includes filters for:
+
+- Date
+- Country
+- Product category
+
+These allow the report to be explored from different perspectives.
+
 ## 🎯 Why I Built This
 
 I wanted to get hands-on experience with Power BI rather than only
@@ -34,18 +99,20 @@ first steps into Power BI.
 
 ## 🧠 What I Learned
 
-Through this project, I got hands-on experience with:
+This project gave me my first practical experience with Power BI.
 
-- Power BI Desktop
-- Data exploration
-- Data transformation
-- Power Query
-- Data modeling
-- Relationships between tables
-- Data visualization
-- Filters and slicers
-- DAX and measures
-- Report design
+Some of the things I learned while building this report include:
+
+- Navigating Power BI Desktop
+- Importing and exploring data
+- Working with Power Query
+- Understanding tables and relationships
+- Creating visualizations from data
+- Creating KPI cards
+- Using slicers and filters
+- Creating and using DAX measures
+- Building a basic analytical dashboard
+- Thinking about how to present data visually
 
 ## 🛠️ Tools Used
 

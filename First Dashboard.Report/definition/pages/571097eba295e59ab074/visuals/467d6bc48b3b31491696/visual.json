@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "467d6bc48b3b31491696",
+  "position": {
+    "x": 924.188344863398,
+    "y": 646.3143436238463,
+    "z": 1,
+    "height": 434.30677230774387,
+    "width": 689.53918826110987,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "orders[1]"
+                    }
+                  },
+                  "Property": "product_category"
+                }
+              },
+              "queryRef": "orders[1].product_category",
+              "nativeQueryRef": "product_category",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "orders[1]"
+                        }
+                      },
+                      "Property": "sales"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(orders[1].sales)",
+              "nativeQueryRef": "Sum of sales"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "orders[1]"
+                      }
+                    },
+                    "Property": "sales"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5257d35e0c0b0c8e61c2",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "orders[1]"
+                  }
+                },
+                "Property": "sales"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a3c4022a0cbe08d5110e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "orders[1]"
+              }
+            },
+            "Property": "product_category"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

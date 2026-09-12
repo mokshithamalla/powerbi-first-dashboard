@@ -1,0 +1,9 @@
+relationship cc5c17b4-04f3-445a-b85c-c36d25f97d01
+	joinOnDateBehavior: datePartOnly
+	fromColumn: orders[1].order_date
+	toColumn: LocalDateTable_d9c64cf8-7e0a-4505-b91d-429c51ca994f.Date
+
+relationship AutoDetected_9a2c0afe-9486-400f-b47c-155cdc8c0cb3
+	fromColumn: orders[1].customer_id
+	toColumn: customers[1].customer_id
+

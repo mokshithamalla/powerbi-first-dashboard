@@ -1,0 +1,83 @@
+table orders[1]
+	lineageTag: 2c487df6-5632-4591-99af-655b34afe544
+
+	column order_id
+		dataType: string
+		lineageTag: bbf0b48a-2de5-468f-8073-4c57c47bf74b
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 0bf99421-1e51-4007-9f8f-69486b1cf26b
+		summarizeBy: none
+		sourceColumn: order_date
+
+		variation Variation
+			isDefault
+			relationship: cc5c17b4-04f3-445a-b85c-c36d25f97d01
+			defaultHierarchy: LocalDateTable_d9c64cf8-7e0a-4505-b91d-429c51ca994f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column customer_id
+		dataType: string
+		lineageTag: e231445c-c0df-4a79-b369-7503bab62794
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name
+		dataType: string
+		lineageTag: e5989ddb-316a-4a05-894d-01d3c787776e
+		summarizeBy: none
+		sourceColumn: product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_category
+		dataType: string
+		lineageTag: 56f3e81a-291f-4695-a8a7-ea01bb2d8cd7
+		summarizeBy: none
+		sourceColumn: product_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: ec7e6cec-ab75-4786-a5c2-501d5d235233
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales
+		dataType: double
+		formatString: #,0
+		lineageTag: f6604f31-dfba-4020-88ec-dab7e57abb3f
+		summarizeBy: sum
+		sourceColumn: sales
+
+		annotation SummarizationSetBy = Automatic
+
+	partition orders[1] = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\moksh\AppData\Local\Packages\Microsoft.MicrosoftPowerBIDesktop_8wekyb3d8bbwe\AC\INetCache\IVN7IJ4Z\orders[1].csv"),[Delimiter=";", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"order_id", type text}, {"order_date", type date}, {"customer_id", type text}, {"product_name", type text}, {"product_category", type text}, {"quantity", Int64.Type}, {"sales", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

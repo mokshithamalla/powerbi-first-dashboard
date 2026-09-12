@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "f6c88435173ed28b5c79",
+  "position": {
+    "x": 990.05477478684736,
+    "y": 69.98308179366488,
+    "z": 3,
+    "height": 154.37444513308429,
+    "width": 316.9821940065998,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "orders[1]"
+                        }
+                      },
+                      "Property": "customer_id"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Min(orders[1].customer_id)",
+              "nativeQueryRef": "Count of customer_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "orders[1]"
+                      }
+                    },
+                    "Property": "customer_id"
+                  }
+                },
+                "Function": 2
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9b70e9e26be87d06044d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "orders[1]"
+                  }
+                },
+                "Property": "customer_id"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

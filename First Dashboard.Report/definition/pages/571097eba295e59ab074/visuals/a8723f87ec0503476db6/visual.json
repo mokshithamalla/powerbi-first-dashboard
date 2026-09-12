@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "a8723f87ec0503476db6",
+  "position": {
+    "x": 1624.0191628000468,
+    "y": 335.50712742256991,
+    "z": 6,
+    "height": 292.28228278530628,
+    "width": 296.39893465552188,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "customers[1]"
+                    }
+                  },
+                  "Property": "country"
+                }
+              },
+              "queryRef": "customers[1].country",
+              "nativeQueryRef": "country",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a6f4d2ce0e6ccdca740b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "customers[1]"
+              }
+            },
+            "Property": "country"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

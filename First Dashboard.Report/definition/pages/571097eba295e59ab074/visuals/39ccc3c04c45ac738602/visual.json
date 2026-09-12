@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "39ccc3c04c45ac738602",
+  "position": {
+    "x": 1624.0191628000468,
+    "y": 646.3143436238463,
+    "z": 7,
+    "height": 434.30677230774387,
+    "width": 296.39893465552188,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "orders[1]"
+                    }
+                  },
+                  "Property": "product_category"
+                }
+              },
+              "queryRef": "orders[1].product_category",
+              "nativeQueryRef": "product_category",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "67a595b2239182816006",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "orders[1]"
+              }
+            },
+            "Property": "product_category"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "d382f6a4c590336aa101",
+  "position": {
+    "x": 137.90783765222199,
+    "y": 98.799644885173961,
+    "z": 9,
+    "height": 121.44123017135965,
+    "width": 555.74800247910355,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "     ",
+                    "textStyle": {
+                      "fontSize": "24pt"
+                    }
+                  },
+                  {
+                    "value": "Sales Dashboard 2026",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "36pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

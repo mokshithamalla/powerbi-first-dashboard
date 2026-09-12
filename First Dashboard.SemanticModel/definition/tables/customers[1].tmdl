@@ -1,0 +1,74 @@
+table customers[1]
+	lineageTag: 8ef48f72-762b-410f-b474-0f435a0c470c
+
+	column customer_id
+		dataType: string
+		lineageTag: 271728bb-c817-4a94-b4f3-dd76161c0071
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 01bcbeea-a8d0-4a25-9fd6-f7d38ae6319b
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: 57fdfb92-333a-4c2b-a03a-aaa6f14c43fc
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 82b86eca-7f1d-4a99-adbf-2481ba4ce981
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column score
+		dataType: int64
+		formatString: 0
+		lineageTag: e92d7674-2263-432f-abf5-94481bb05a7c
+		summarizeBy: none
+		sourceColumn: score
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Clean Score' = COALESCE('customers[1]'[score],0)
+		formatString: 0
+		lineageTag: f401a3c7-8a18-4df1-acb0-c79b4ddee17d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_name
+		dataType: string
+		lineageTag: b31265d7-3160-4b51-bdaf-6af5be534794
+		summarizeBy: none
+		sourceColumn: Customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customers[1] = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\moksh\AppData\Local\Packages\Microsoft.MicrosoftPowerBIDesktop_8wekyb3d8bbwe\AC\INetCache\VYSJTX3Z\customers[1].csv"),[Delimiter=";", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"customer_id", type text}, {"first_name", type text}, {"last_name", type text}, {"country", type text}, {"state", type text}, {"city", type text}, {"score", Int64.Type}}),
+				    #"Merged Columns" = Table.CombineColumns(#"Changed Type",{"first_name", "last_name"},Combiner.CombineTextByDelimiter(" ", QuoteStyle.None),"Customer_name")
+				in
+				    #"Merged Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

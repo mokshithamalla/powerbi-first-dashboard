@@ -17,7 +17,7 @@ exploring the tool for the first time to creating my first report.
 
 ## 📊 Dashboard Preview
 
-*Screenshot coming soon.*
+![My First Power BI Dashboard](screenshots/dashboard.png)
 
 ## 🎯 Why I Built This
 

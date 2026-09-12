@@ -5,8 +5,6 @@
 
 ## 🌱 Why This Project Matters to Me
 
-This is my first-ever Power BI project.
-
 What makes this project special to me isn't that the dashboard is
 perfect — it is that it represents the first time I went from
 learning a new tool to actually creating a report with it.
